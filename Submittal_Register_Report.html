@@ -990,7 +990,7 @@
                 <h1>Submittal Register Analysis Report</h1>
                 <p class="subtitle">Comprehensive Analysis of Project Submittals</p>
                 <div class="report-info">
-                    <p>Last Updated: 09/29/2025 11:04:49</p>
+                    <p>Last Updated: 09/29/2025 14:10:55</p>
                     <div class="action-buttons">
                         <button class="action-btn print-btn" onclick="window.print()">&#128424; Print Report (Ctrl+P)</button>
                         <button class="action-btn download-btn" onclick="downloadExcel()">&#128229; Download Excel</button>
@@ -6415,9 +6415,9 @@ specified in Section 01756 - Commissioning: Owner training.</div>
                                 <div class="detail-value">10/03/2025</div>
                             </div>
                         </div>
-                    </div>                    <div class="submittal-item response-on-time" data-search="01450-002.0 quality control test auto update test" data-status="submitted">
+                    </div>                    <div class="submittal-item response-on-time" data-search="01450-001.3 quality control hma independent lab qualification resubmittal for astm qualifcations" data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >01450-002.0</div>
+                            <div class="submittal-number no-pdf" >01450-001.3</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -6433,7 +6433,7 @@ specified in Section 01756 - Commissioning: Owner training.</div>
                             </div>
                             <div class="detail-item">
                                 <div class="detail-label">Submittal Title:</div>
-                                <div class="detail-value">Test Auto Update</div>
+                                <div class="detail-value">HMA Independent Lab Qualification</div>
                             </div>
                             <div class="detail-item">
                                 <div class="detail-label">Paragraph No.:</div>
@@ -6441,7 +6441,7 @@ specified in Section 01756 - Commissioning: Owner training.</div>
                             </div>
                             <div class="detail-item">
                                 <div class="detail-label">Description:</div>
-                                <div class="detail-value">Test</div>
+                                <div class="detail-value">Resubmittal for ASTM Qualifcations</div>
                             </div>
                             <div class="detail-item">
                                 <div class="detail-label">Date Submitted:</div>
@@ -7905,10 +7905,10 @@ Equipment and specified herein.</td>
                                 <td></td>
                                 <td>10/15/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >01450-002.0</span></strong></td>
-                                <td>Test Auto Update</td>
+                                <td><strong><span class="submittal-number no-pdf" >01450-001.3</span></strong></td>
+                                <td>HMA Independent Lab Qualification</td>
                                 <td>1.09</td>
-                                <td>Test</td>
+                                <td>Resubmittal for ASTM Qualifcations</td>
                                 <td>QC</td>
                                 <td>09/25/2025</td>
                                 <td></td>
@@ -8470,8 +8470,8 @@ Shop Drawings</td>
             // Set download button
             downloadBtn.onclick = () => downloadPDF(submittalNumber, status);
             
-            // Try to load PDF from status folder
-            const pdfPath = 'PDFs/' + status + '/' + submittalNumber + '.pdf';
+            // Try to load PDF from OneDrive centralized folder
+            const pdfPath = 'C:/Users/mchun/OneDrive - Nan Inc/Desktop/OneDrive - Nan Inc/24-077_Hilo_WWTP_PH1/J2_ProjectDocs/J21_Submittals/06_Report/PDFs/' + status + '/' + submittalNumber + '.pdf';
             
             // Use iframe for PDF viewing
             viewer.src = pdfPath;
@@ -8495,7 +8495,7 @@ Shop Drawings</td>
         }
         
         function downloadPDF(submittalNumber, status) {
-            const pdfPath = 'PDFs/' + status + '/' + submittalNumber + '.pdf';
+            const pdfPath = 'C:/Users/mchun/OneDrive - Nan Inc/Desktop/OneDrive - Nan Inc/24-077_Hilo_WWTP_PH1/J2_ProjectDocs/J21_Submittals/06_Report/PDFs/' + status + '/' + submittalNumber + '.pdf';
             const link = document.createElement('a');
             link.href = pdfPath;
             link.download = submittalNumber + '.pdf';
