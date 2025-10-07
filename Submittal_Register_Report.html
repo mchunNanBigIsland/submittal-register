@@ -990,7 +990,7 @@
                 <h1>Submittal Register Analysis Report</h1>
                 <p class="subtitle">Comprehensive Analysis of Project Submittals</p>
                 <div class="report-info">
-                    <p>Last Updated: 10/07/2025 12:32:46</p>
+                    <p>Last Updated: 10/07/2025 12:51:38</p>
                     <div class="action-buttons">
                         <button class="action-btn print-btn" onclick="window.print()">&#128424; Print Report (Ctrl+P)</button>
                         <button class="action-btn download-btn" onclick="downloadExcel()">&#128229; Download Excel</button>
@@ -1103,11 +1103,11 @@
                 <h2>&#128200; Summary Statistics</h2>
                 <div class="stats-grid">
                     <div class="stat-card" style="background: linear-gradient(135deg, #28a745, #20c997);">
-                        <div class="stat-number">46</div>
+                        <div class="stat-number">47</div>
                         <div class="stat-label">Accepted</div>
                     </div>
                     <div class="stat-card" style="background: linear-gradient(135deg, #ffc107, #e0a800);">
-                        <div class="stat-number">34</div>
+                        <div class="stat-number">33</div>
                         <div class="stat-label">Pending Review</div>
                     </div>
                     <div class="stat-card" style="background: linear-gradient(135deg, #ff6b6b, #ee5a52);">
@@ -1125,7 +1125,7 @@
                 <h2>&#9203; Submittal CM/Carollo Response Tracking</h2>
                 <div class="stats-grid">
                     <div class="stat-card" style="background: linear-gradient(135deg, #dc3545, #c82333);">
-                        <div class="stat-number">8</div>
+                        <div class="stat-number">7</div>
                         <div class="stat-label">Overdue</div>
                     </div>
                     <div class="stat-card" style="background: linear-gradient(135deg, #ffc107, #e0a800);">
@@ -1203,7 +1203,7 @@
                         <span style="font-size: 14px; color: #333;">AC (15 - 9.2%)</span>
                     </div>                    <div style="display: flex; align-items: center; margin: 5px;">
                         <div style="width: 15px; height: 15px; background-color: #4169E1; margin-right: 8px; border-radius: 3px;"></div>
-                        <span style="font-size: 14px; color: #333;">AN (26 - 16%)</span>
+                        <span style="font-size: 14px; color: #333;">AN (27 - 16.6%)</span>
                     </div>                    <div style="display: flex; align-items: center; margin: 5px;">
                         <div style="width: 15px; height: 15px; background-color: #0000CD; margin-right: 8px; border-radius: 3px;"></div>
                         <span style="font-size: 14px; color: #333;">AS (5 - 3.1%)</span>
@@ -1230,7 +1230,7 @@
                         <span style="font-size: 14px; color: #333;">REV (33 - 20.2%)</span>
                     </div>                    <div style="display: flex; align-items: center; margin: 5px;">
                         <div style="width: 15px; height: 15px; background-color: #FFD700; margin-right: 8px; border-radius: 3px;"></div>
-                        <span style="font-size: 14px; color: #333;">Submitted (34 - 20.9%)</span>
+                        <span style="font-size: 14px; color: #333;">Submitted (33 - 20.2%)</span>
                     </div>                </div>
             </div>
             
@@ -1238,7 +1238,7 @@
                 // Status pie chart data
                 const statusPieChartData = {
                     labels: ["AC","AN","AS","in progress","L","NCR","NR","RA","RC","REV","Submitted"],
-                    data: [15,26,5,1,4,28,1,6,2,33,34],
+                    data: [15,27,5,1,4,28,1,6,2,33,33],
                     colors: ["#1E90FF","#4169E1","#0000CD","#8A2BE2","#FF8C00","#DC143C","#B22222","#32CD32","#228B22","#DDA0DD","#FFD700"]
                 };
             </script>
@@ -1419,7 +1419,7 @@
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="01321-003.0 scheduler and reports resubmittal submit preliminary and baseline schedule." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >01321-003.0</div>
+                            <div class="submittal-number " onclick="openPDF('01321-003.0', 'Submitted')">01321-003.0</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -1675,7 +1675,7 @@
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="01357-001.0 delegated design procedures  contractor’s professional engineer’s qualifications." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >01357-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('01357-001.0', 'submitted')">01357-001.0</div>
                             <div class="status-badge submitted ">submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -2449,7 +2449,7 @@ completed wastewater bypass pumping checklist.</div>
                         </div>
                     </div>                    <div class="submittal-item response-approaching" data-search="02667-001.2 hot tapping and line stopping hot tapping and line stopping experience summary and references for specialty contractor to perform the work." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >02667-001.2</div>
+                            <div class="submittal-number " onclick="openPDF('02667-001.2', 'submitted')">02667-001.2</div>
                             <div class="status-badge submitted ">submitted</div>
                             <span class='response-status-badge approaching'>Due Soon</span>
                             
@@ -2539,7 +2539,7 @@ completed wastewater bypass pumping checklist.</div>
                         </div>
                     </div>                    <div class="submittal-item response-approaching" data-search="15052-001.1 common work results for general piping concrete encasement layouts - shop drawings" data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >15052-001.1</div>
+                            <div class="submittal-number " onclick="openPDF('15052-001.1', 'submitted')">15052-001.1</div>
                             <div class="status-badge submitted ">submitted</div>
                             <span class='response-status-badge approaching'>Due Soon</span>
                             
@@ -2584,7 +2584,7 @@ completed wastewater bypass pumping checklist.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="15052-002.0 common work results for general piping wall sleeves c&b piping product data." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >15052-002.0</div>
+                            <div class="submittal-number " onclick="openPDF('15052-002.0', 'submitted')">15052-002.0</div>
                             <div class="status-badge submitted ">submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -2629,7 +2629,7 @@ completed wastewater bypass pumping checklist.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="15076-001.0 pipe identification detectable warning tape product data." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >15076-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('15076-001.0', 'Submitted')">15076-001.0</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -2716,7 +2716,7 @@ completed wastewater bypass pumping checklist.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="15115-001.1 gate, globe, and angle valves knife gate valve product data: as specified in section 15110 - common work results for valves." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >15115-001.1</div>
+                            <div class="submittal-number " onclick="openPDF('15115-001.1', 'Submitted')">15115-001.1</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -2762,7 +2762,7 @@ completed wastewater bypass pumping checklist.</div>
                     </div>                    <div class="submittal-item response-on-time" data-search="15211-001.1 ductile iron pipe: awwa c151 resubmittal ductile iron pipi product data: as specified in section 15052 - common work results for general 
 piping." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >15211-001.1</div>
+                            <div class="submittal-number " onclick="openPDF('15211-001.1', 'Submitted')">15211-001.1</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -2808,7 +2808,7 @@ Piping.</div>
                         </div>
                     </div>                    <div class="submittal-item" data-search="15230-002.1 plastic piping and tubing product submittal: sch80 pvc & cpvc product data:materials and fittings only!" data-status="ac">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >15230-002.1</div>
+                            <div class="submittal-number " onclick="openPDF('15230-002.1', 'AC')">15230-002.1</div>
                             <div class="status-badge ac ">AC</div>
                             
                             
@@ -2850,7 +2850,7 @@ Piping.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="15230-003.1 plastic piping and tubing product data: solvent cement and primer product data for solvent cement and primer" data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >15230-003.1</div>
+                            <div class="submittal-number " onclick="openPDF('15230-003.1', 'Submitted')">15230-003.1</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -2895,7 +2895,7 @@ Piping.</div>
                         </div>
                     </div>                    <div class="submittal-item" data-search="15241-001.1 high density polyethylene (hdpe) pipe: awwa c906 hdpe for emergency bypass only resubmital, no shop drawings" data-status="ac">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >15241-001.1</div>
+                            <div class="submittal-number " onclick="openPDF('15241-001.1', 'AC')">15241-001.1</div>
                             <div class="status-badge ac ">AC</div>
                             
                             
@@ -2938,7 +2938,7 @@ Piping.</div>
                     </div>                    <div class="submittal-item" data-search="15832-001.1 odor control fans same as spec submit as specified in section 15050 - common work results for mechanical 
 equipment and specified herein." data-status="ac">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >15832-001.1</div>
+                            <div class="submittal-number " onclick="openPDF('15832-001.1', 'AC')">15832-001.1</div>
                             <div class="status-badge ac ">AC</div>
                             
                             
@@ -2981,7 +2981,7 @@ Equipment and specified herein.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="15958-002.1 mechanical equipment testing pdm specialist qualifications qualifcations and equipment variance request" data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >15958-002.1</div>
+                            <div class="submittal-number " onclick="openPDF('15958-002.1', 'Submitted')">15958-002.1</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -3363,7 +3363,7 @@ Equipment and specified herein.</div>
                         </div>
                     </div>                    <div class="submittal-item critical-status" data-search="11403-001.0 tube-in-tube heat exchanger walker product data including materials of construction." data-status="ncr">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >11403-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('11403-001.0', 'NCR')">11403-001.0</div>
                             <div class="status-badge ncr critical-badge">NCR</div>
                             
                             
@@ -3449,7 +3449,7 @@ standards, and identification of all materials and metallurgy used in the system
                         </div>
                     </div>                    <div class="submittal-item response-overdue" data-search="11294b-001.0 heavy-duty fabricated stainless steel slide gates  product data: as specified in section 15050 - common work results for mechanical equipment." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >11294B-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('11294B-001.0', 'submitted')">11294B-001.0</div>
                             <div class="status-badge submitted ">submitted</div>
                             <span class='response-status-badge overdue'>LATE</span>
                             
@@ -3494,7 +3494,7 @@ standards, and identification of all materials and metallurgy used in the system
                         </div>
                     </div>                    <div class="submittal-item response-overdue" data-search="11312c-001.0 horizontal recess impeller centrifugal pumps  torsional analysis: submit as specified in section 15050 - common work results for mechanical equipment when scheduled." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >11312C-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('11312C-001.0', 'submitted')">11312C-001.0</div>
                             <div class="status-badge submitted ">submitted</div>
                             <span class='response-status-badge overdue'>LATE</span>
                             
@@ -3623,7 +3623,7 @@ standards, and identification of all materials and metallurgy used in the system
                         </div>
                     </div>                    <div class="submittal-item response-overdue" data-search="11312k-001.0 submersible medium capacity centrifugal pumps  product data: as specified in section 15050 - common work results for mechanical equipment." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >11312K-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('11312K-001.0', 'submitted')">11312K-001.0</div>
                             <div class="status-badge submitted ">submitted</div>
                             <span class='response-status-badge overdue'>LATE</span>
                             
@@ -3668,7 +3668,7 @@ standards, and identification of all materials and metallurgy used in the system
                         </div>
                     </div>                    <div class="submittal-item response-overdue" data-search="11312r-001.0 single-lobe rotary pumps hes vibration analysis: submit as specified in section 15050 - common work results for mechanical equipment when scheduled." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >11312R-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('11312R-001.0', 'submitted')">11312R-001.0</div>
                             <div class="status-badge submitted ">submitted</div>
                             <span class='response-status-badge overdue'>LATE</span>
                             
@@ -3759,7 +3759,7 @@ standards, and identification of all materials and metallurgy used in the system
                     </div>                    <div class="submittal-item response-on-time" data-search="11348-001.0 chemical mixers  product data: as specified in section 15050 - common work results for 
 mechanical equipment." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >11348-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('11348-001.0', 'Submitted')">11348-001.0</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -3805,7 +3805,7 @@ Mechanical Equipment.</div>
                         </div>
                     </div>                    <div class="submittal-item response-overdue" data-search="11395d-001.1 headworks odor control system  shop drawings" data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >11395D-001.1</div>
+                            <div class="submittal-number " onclick="openPDF('11395D-001.1', 'Submitted')">11395D-001.1</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge overdue'>LATE</span>
                             
@@ -3935,7 +3935,7 @@ Mechanical Equipment.</div>
                     </div>                    <div class="submittal-item response-approaching" data-search="11555-001.1 self-cleaning strainers tekleen product data product data: as specified in section 15050 - basic mechanical materials and 
 methods." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >11555-001.1</div>
+                            <div class="submittal-number " onclick="openPDF('11555-001.1', 'submitted')">11555-001.1</div>
                             <div class="status-badge submitted ">submitted</div>
                             <span class='response-status-badge approaching'>Due Soon</span>
                             
@@ -4620,11 +4620,11 @@ Contractor.</div>
                                 <div class="detail-value">N/A</div>
                             </div>
                         </div>
-                    </div>                    <div class="submittal-item response-overdue" data-search="02762-001.1 pavement markings traffic sign submital product data." data-status="submitted">
+                    </div>                    <div class="submittal-item" data-search="02762-001.1 pavement markings traffic sign submital product data." data-status="an">
                         <div class="submittal-header">
                             <div class="submittal-number no-pdf" >02762-001.1</div>
-                            <div class="status-badge submitted ">Submitted</div>
-                            <span class='response-status-badge overdue'>LATE</span>
+                            <div class="status-badge an ">AN</div>
+                            
                             
                         </div>
                         <div class="submittal-details">
@@ -4652,17 +4652,14 @@ Contractor.</div>
                                 <div class="detail-label">Date Submitted:</div>
                                 <div class="detail-value">06/03/2025</div>
                             </div>
-                                                        <div class="detail-item">
-                                <div class="detail-label">Response Due Date:</div>
-                                <div class="detail-value response-overdue">07/03/2025 (Overdue by 96 days)</div>
-                            </div>
+                            
                             <div class="detail-item">
                                 <div class="detail-label">Return Date:</div>
-                                <div class="detail-value"></div>
+                                <div class="detail-value">09/17/2025</div>
                             </div>
                             <div class="detail-item">
                                 <div class="detail-label">NLT Date:</div>
-                                <div class="detail-value">07/03/2025</div>
+                                <div class="detail-value">N/A</div>
                             </div>
                         </div>
                     </div>                    <div class="submittal-item" data-search="02820-001.4 fences and gates  (islandwide fencing) resubmittal islandwide product data: submit data completely describing products." data-status="ac">
@@ -5307,7 +5304,7 @@ instructions for resilient flooring, wax, and accessories.</div>
                         </div>
                     </div>                    <div class="submittal-item" data-search="03154-001.0 hydrophilic rubber waterstop sika hydrotite(product data) manufacturer’s product data sheets." data-status="ac">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >03154-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('03154-001.0', 'AC')">03154-001.0</div>
                             <div class="status-badge ac ">AC</div>
                             
                             
@@ -5478,7 +5475,7 @@ instructions for resilient flooring, wax, and accessories.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="03600-001.0 grouting non-shrink epoxy grout - five star material submittals. non-shrink epoxy grout: manufacturer's literature." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >03600-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('03600-001.0', 'Submitted')">03600-001.0</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -5651,7 +5648,7 @@ concrete materials.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="06611-001.0 fiberglass reinforced plastic fabrications  shop drawings." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >06611-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('06611-001.0', 'Submitted')">06611-001.0</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -5961,7 +5958,7 @@ panels.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="13120-001.1  pre-engineered structures product data:  for all metal building system components." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >13120-001.1</div>
+                            <div class="submittal-number " onclick="openPDF('13120-001.1', 'Submitted')">13120-001.1</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -6177,7 +6174,7 @@ construction, in accordance with ASTM C858, for record.</div>
                         </div>
                     </div>                    <div class="submittal-item response-approaching" data-search="16060-001.0 grounding and bonding grounding and bonding product data." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >16060-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('16060-001.0', 'Submitted')">16060-001.0</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge approaching'>Due Soon</span>
                             
@@ -6222,7 +6219,7 @@ construction, in accordance with ASTM C858, for record.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="16123-001.0 600-volt or less wires and cables product data: mass electric product data." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >16123-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('16123-001.0', 'Submitted')">16123-001.0</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -6267,7 +6264,7 @@ construction, in accordance with ASTM C858, for record.</div>
                         </div>
                     </div>                    <div class="submittal-item response-approaching" data-search="16130-001.1 conduits explosion prof and liquidtight flex conduit product data." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >16130-001.1</div>
+                            <div class="submittal-number " onclick="openPDF('16130-001.1', 'Submitted')">16130-001.1</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge approaching'>Due Soon</span>
                             
@@ -6396,7 +6393,7 @@ construction, in accordance with ASTM C858, for record.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="16133-002.1 duct banks shop drawings product data & shop drawings." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >16133-002.1</div>
+                            <div class="submittal-number " onclick="openPDF('16133-002.1', 'Submitted')">16133-002.1</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -6483,7 +6480,7 @@ construction, in accordance with ASTM C858, for record.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="16305-002.0 electrical system studies intial studies initial studies and reports." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >16305-002.0</div>
+                            <div class="submittal-number " onclick="openPDF('16305-002.0', 'Submitted')">16305-002.0</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -6615,7 +6612,7 @@ specified in Section 01756 - Commissioning: Owner training.</div>
                         </div>
                     </div>                    <div class="submittal-item response-on-time" data-search="17302-001.0 flow measurement: magnetic flowmeters product data(dynatek) chart of the measurement error from zero to maximum measured volumetric flow range indicated in data sheets." data-status="submitted">
                         <div class="submittal-header">
-                            <div class="submittal-number no-pdf" >17302-001.0</div>
+                            <div class="submittal-number " onclick="openPDF('17302-001.0', 'Submitted')">17302-001.0</div>
                             <div class="status-badge submitted ">Submitted</div>
                             <span class='response-status-badge on-time'>On Time</span>
                             
@@ -7053,7 +7050,7 @@ Include list of references complete with phone numbers.</div>
                                 <td>09/19/2025</td>
                                 <td>N/A</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >03154-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('03154-001.0', 'AC')">03154-001.0</span></strong></td>
                                 <td>Sika Hydrotite(Product Data)</td>
                                 <td>1.02-A-2-a</td>
                                 <td>Manufacturer’s product data sheets.</td>
@@ -7128,7 +7125,7 @@ panels.</td>
                                 <td></td>
                                 <td>N/A</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >15230-002.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('15230-002.1', 'AC')">15230-002.1</span></strong></td>
                                 <td>Product submittal: SCH80 PVC & CPVC</td>
                                 <td>1.04-B</td>
                                 <td>Product data:Materials and Fittings Only!</td>
@@ -7137,7 +7134,7 @@ panels.</td>
                                 <td>09/26/2025</td>
                                 <td>N/A</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >15241-001.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('15241-001.1', 'AC')">15241-001.1</span></strong></td>
                                 <td>HDPE for Emergency Bypass Only</td>
                                 <td></td>
                                 <td>Resubmital, no shop drawings</td>
@@ -7146,7 +7143,7 @@ panels.</td>
                                 <td></td>
                                 <td>N/A</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >15832-001.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('15832-001.1', 'AC')">15832-001.1</span></strong></td>
                                 <td>same as spec</td>
                                 <td>1.04-A</td>
                                 <td>Submit as specified in Section 15050 - Common Work Results for Mechanical 
@@ -7169,7 +7166,7 @@ Equipment and specified herein.</td>
                     </div>
                 </div>                <div class="status-section">
                     <div class="status-section-header" onclick="toggleStatusSection('AN')">
-                        <h3 class="status-title">AN - Approved No Comments - 26 Submittals</h3>
+                        <h3 class="status-title">AN - Approved No Comments - 27 Submittals</h3>
                         <span class="status-section-toggle" id="toggle-AN">&#9660;</span>
                     </div>
                     <div class="status-section-content" id="content-AN">
@@ -7305,6 +7302,15 @@ construction, in accordance with ASTM C858, for record.</td>
                                 <td>Civil</td>
                                 <td>04/15/2025</td>
                                 <td>04/25/2025</td>
+                                <td>N/A</td>
+                            </tr>                            <tr>
+                                <td><strong><span class="submittal-number no-pdf" >02762-001.1</span></strong></td>
+                                <td>Traffic Sign Submital</td>
+                                <td>1.02-A</td>
+                                <td>Product data.</td>
+                                <td>Civil</td>
+                                <td>06/03/2025</td>
+                                <td>09/17/2025</td>
                                 <td>N/A</td>
                             </tr>                            <tr>
                                 <td><strong><span class="submittal-number " onclick="openPDF('03055-001.0', 'AN')">03055-001.0</span></strong></td>
@@ -7737,7 +7743,7 @@ instructions for resilient flooring, wax, and accessories.</td>
                                 <td>10/01/2025</td>
                                 <td>10/31/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >11403-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('11403-001.0', 'NCR')">11403-001.0</span></strong></td>
                                 <td>Walker</td>
                                 <td>1.03-B</td>
                                 <td>Product data including materials of construction.</td>
@@ -8350,7 +8356,7 @@ Equipment and specified herein.</td>
                     </div>
                 </div>                <div class="status-section">
                     <div class="status-section-header" onclick="toggleStatusSection('Submitted')">
-                        <h3 class="status-title">Submitted - Submitted - 34 Submittals</h3>
+                        <h3 class="status-title">Submitted - Submitted - 33 Submittals</h3>
                         <span class="status-section-toggle" id="toggle-Submitted">&#9660;</span>
                     </div>
                     <div class="status-section-content" id="content-Submitted">
@@ -8368,7 +8374,7 @@ Equipment and specified herein.</td>
                             </tr>
                         </thead>
                         <tbody>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >01321-003.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('01321-003.0', 'Submitted')">01321-003.0</span></strong></td>
                                 <td>Resubmittal</td>
                                 <td>1.02-A</td>
                                 <td>Submit preliminary and baseline schedule.</td>
@@ -8377,7 +8383,7 @@ Equipment and specified herein.</td>
                                 <td></td>
                                 <td>10/15/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >01357-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('01357-001.0', 'submitted')">01357-001.0</span></strong></td>
                                 <td></td>
                                 <td>1.04-A-1</td>
                                 <td>Contractor’s Professional Engineer’s qualifications.</td>
@@ -8395,7 +8401,7 @@ Equipment and specified herein.</td>
                                 <td></td>
                                 <td>10/25/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >02667-001.2</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('02667-001.2', 'submitted')">02667-001.2</span></strong></td>
                                 <td>HOT TAPPING AND LINE STOPPING</td>
                                 <td>1.02-B</td>
                                 <td>Experience summary and references for specialty contractor to perform the work.</td>
@@ -8403,15 +8409,6 @@ Equipment and specified herein.</td>
                                 <td>09/10/2025</td>
                                 <td></td>
                                 <td>10/10/2025</td>
-                            </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >02762-001.1</span></strong></td>
-                                <td>Traffic Sign Submital</td>
-                                <td>1.02-A</td>
-                                <td>Product data.</td>
-                                <td>Civil</td>
-                                <td>06/03/2025</td>
-                                <td></td>
-                                <td>07/03/2025</td>
                             </tr>                            <tr>
                                 <td><strong><span class="submittal-number no-pdf" >03300-004.0</span></strong></td>
                                 <td>Cast-in-place Concrete structures shop drawings</td>
@@ -8422,7 +8419,7 @@ Equipment and specified herein.</td>
                                 <td></td>
                                 <td>10/26/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >03600-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('03600-001.0', 'Submitted')">03600-001.0</span></strong></td>
                                 <td>Non-shrink Epoxy Grout - Five Star</td>
                                 <td>1.03-C-1</td>
                                 <td>Material submittals. Non-shrink epoxy grout: Manufacturer's literature.</td>
@@ -8431,7 +8428,7 @@ Equipment and specified herein.</td>
                                 <td></td>
                                 <td>11/01/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >06611-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('06611-001.0', 'Submitted')">06611-001.0</span></strong></td>
                                 <td></td>
                                 <td>1.03-A</td>
                                 <td>Shop Drawings.</td>
@@ -8449,7 +8446,7 @@ Equipment and specified herein.</td>
                                 <td></td>
                                 <td>10/09/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >11294B-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('11294B-001.0', 'submitted')">11294B-001.0</span></strong></td>
                                 <td></td>
                                 <td>1.06-B</td>
                                 <td>Product data: As specified in Section 15050 - Common Work Results for Mechanical Equipment.</td>
@@ -8458,7 +8455,7 @@ Equipment and specified herein.</td>
                                 <td></td>
                                 <td>07/19/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >11312C-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('11312C-001.0', 'submitted')">11312C-001.0</span></strong></td>
                                 <td></td>
                                 <td>1.05-B</td>
                                 <td>Torsional analysis: Submit as specified in Section 15050 - Common Work Results for Mechanical Equipment when scheduled.</td>
@@ -8467,7 +8464,7 @@ Equipment and specified herein.</td>
                                 <td></td>
                                 <td>10/02/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >11312K-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('11312K-001.0', 'submitted')">11312K-001.0</span></strong></td>
                                 <td></td>
                                 <td>1.04-B</td>
                                 <td>Product data: As specified in Section 15050 - Common Work Results for Mechanical Equipment.</td>
@@ -8476,7 +8473,7 @@ Equipment and specified herein.</td>
                                 <td></td>
                                 <td>10/02/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >11312R-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('11312R-001.0', 'submitted')">11312R-001.0</span></strong></td>
                                 <td>HES</td>
                                 <td>1.04-B</td>
                                 <td>Vibration analysis: Submit as specified in Section 15050 - Common Work Results for Mechanical Equipment when scheduled.</td>
@@ -8494,7 +8491,7 @@ Equipment and specified herein.</td>
                                 <td></td>
                                 <td>07/16/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >11348-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('11348-001.0', 'Submitted')">11348-001.0</span></strong></td>
                                 <td></td>
                                 <td>1.05-B</td>
                                 <td>Product data: As specified in Section 15050 - Common Work Results for 
@@ -8504,7 +8501,7 @@ Mechanical Equipment.</td>
                                 <td></td>
                                 <td>10/29/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >11395D-001.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('11395D-001.1', 'Submitted')">11395D-001.1</span></strong></td>
                                 <td></td>
                                 <td>1.04-A</td>
                                 <td>Shop Drawings</td>
@@ -8513,7 +8510,7 @@ Mechanical Equipment.</td>
                                 <td></td>
                                 <td>10/02/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >11555-001.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('11555-001.1', 'submitted')">11555-001.1</span></strong></td>
                                 <td>Tekleen Product Data</td>
                                 <td>1.04-B</td>
                                 <td>Product data: As specified in Section 15050 - Basic Mechanical Materials and 
@@ -8532,7 +8529,7 @@ Methods.</td>
                                 <td></td>
                                 <td>07/16/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >13120-001.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('13120-001.1', 'Submitted')">13120-001.1</span></strong></td>
                                 <td>Pre-Engineered Structures</td>
                                 <td>1.05-A</td>
                                 <td>Product Data:  For all metal building system components.</td>
@@ -8541,7 +8538,7 @@ Methods.</td>
                                 <td></td>
                                 <td>10/29/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >15052-001.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('15052-001.1', 'submitted')">15052-001.1</span></strong></td>
                                 <td>Concrete Encasement</td>
                                 <td>1.04 B - 1(G)</td>
                                 <td>Layouts - Shop drawings</td>
@@ -8550,7 +8547,7 @@ Methods.</td>
                                 <td></td>
                                 <td>10/11/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >15052-002.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('15052-002.0', 'submitted')">15052-002.0</span></strong></td>
                                 <td>Wall Sleeves C&B Piping</td>
                                 <td>1.04-B</td>
                                 <td>Product data.</td>
@@ -8559,7 +8556,7 @@ Methods.</td>
                                 <td></td>
                                 <td>10/29/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >15076-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('15076-001.0', 'Submitted')">15076-001.0</span></strong></td>
                                 <td>Detectable warning tape</td>
                                 <td>1.03-B-1</td>
                                 <td>Product data.</td>
@@ -8568,7 +8565,7 @@ Methods.</td>
                                 <td></td>
                                 <td>10/25/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >15115-001.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('15115-001.1', 'Submitted')">15115-001.1</span></strong></td>
                                 <td>KNIFE GATE VALVE</td>
                                 <td>1.0-B</td>
                                 <td>Product data: As specified in Section 15110 - Common Work Results for Valves.</td>
@@ -8577,7 +8574,7 @@ Methods.</td>
                                 <td>09/17/2025</td>
                                 <td>10/17/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >15211-001.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('15211-001.1', 'Submitted')">15211-001.1</span></strong></td>
                                 <td>Resubmittal Ductile Iron Pipi</td>
                                 <td>1.03-B</td>
                                 <td>Product data: As specified in Section 15052 - Common Work Results for General 
@@ -8587,7 +8584,7 @@ Piping.</td>
                                 <td></td>
                                 <td></td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >15230-003.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('15230-003.1', 'Submitted')">15230-003.1</span></strong></td>
                                 <td>Product Data: Solvent Cement and Primer</td>
                                 <td>1.04-B</td>
                                 <td>Product Data for Solvent Cement and Primer</td>
@@ -8596,7 +8593,7 @@ Piping.</td>
                                 <td></td>
                                 <td>10/26/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >15958-002.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('15958-002.1', 'Submitted')">15958-002.1</span></strong></td>
                                 <td>PDM Specialist Qualifications</td>
                                 <td>3.07</td>
                                 <td>Qualifcations and Equipment Variance Request</td>
@@ -8605,7 +8602,7 @@ Piping.</td>
                                 <td></td>
                                 <td>10/29/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >16060-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('16060-001.0', 'Submitted')">16060-001.0</span></strong></td>
                                 <td>Grounding and Bonding</td>
                                 <td>1.03-B</td>
                                 <td>Product data.</td>
@@ -8614,7 +8611,7 @@ Piping.</td>
                                 <td></td>
                                 <td>10/11/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >16123-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('16123-001.0', 'Submitted')">16123-001.0</span></strong></td>
                                 <td>Product Data: Mass Electric</td>
                                 <td>1.03-B</td>
                                 <td>Product data.</td>
@@ -8623,7 +8620,7 @@ Piping.</td>
                                 <td></td>
                                 <td>10/31/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >16130-001.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('16130-001.1', 'Submitted')">16130-001.1</span></strong></td>
                                 <td>Explosion Prof and Liquidtight Flex Conduit</td>
                                 <td>1.04-B</td>
                                 <td>Product data.</td>
@@ -8632,7 +8629,7 @@ Piping.</td>
                                 <td></td>
                                 <td>10/11/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >16133-002.1</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('16133-002.1', 'Submitted')">16133-002.1</span></strong></td>
                                 <td>Shop Drawings</td>
                                 <td>1.02 C (1) & (2)</td>
                                 <td>Product data & Shop drawings.</td>
@@ -8641,7 +8638,7 @@ Piping.</td>
                                 <td></td>
                                 <td>10/19/2025</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >16305-002.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('16305-002.0', 'Submitted')">16305-002.0</span></strong></td>
                                 <td>Intial Studies</td>
                                 <td>1.03-B</td>
                                 <td>Initial studies and reports.</td>
@@ -8660,7 +8657,7 @@ specified in Section 01756 - Commissioning: Owner training.</td>
                                 <td></td>
                                 <td>N/A</td>
                             </tr>                            <tr>
-                                <td><strong><span class="submittal-number no-pdf" >17302-001.0</span></strong></td>
+                                <td><strong><span class="submittal-number " onclick="openPDF('17302-001.0', 'Submitted')">17302-001.0</span></strong></td>
                                 <td>Product Data(Dynatek)</td>
                                 <td>1.03-B-1</td>
                                 <td>Chart of the measurement error from zero to maximum measured volumetric flow range indicated in data sheets.</td>
