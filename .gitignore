@@ -1,0 +1,43 @@
+# System files
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules
+node_modules/
+
+# Backup files
+backups/
+*.bak
+*.backup
+
+# Temporary files
+temp-uploads/
+*.log
+
+# Windows specific
+AppData/
+*.lnk
+
+# OneDrive sync files
+*.odt
+*.ods
+
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+
+# PDF files (if you don't want to track them)
+# *.pdf
+
+# Large files that shouldn't be in git
+*.zip
+*.rar
+*.7z

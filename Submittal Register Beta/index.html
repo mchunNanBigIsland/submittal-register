@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submittal Register Beta - Enhanced Document Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0f4c75 0%, #1e3c72 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .beta-badge {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .main-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .action-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #1e3c72;
+        }
+        
+        .action-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .action-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .action-btn {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 60, 114, 0.3);
+        }
+        
+        .action-btn:hover {
+            background: linear-gradient(135deg, #2a5298, #1e3c72);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 60, 114, 0.4);
+        }
+        
+        .features {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .features h2 {
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        
+        .feature-text {
+            flex: 1;
+        }
+        
+        .feature-text h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-text p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .new-features {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+        
+        .new-features h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .new-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .new-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .new-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .new-features li:before {
+            content: "✨ ";
+            margin-right: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="beta-badge">BETA VERSION</div>
+        <h1>📋 Submittal Register Beta</h1>
+        <p>Enhanced Document Management with Priority & Assignee Features</p>
+    </div>
+    
+    <div class="container">
+        <div class="main-actions">
+            <div class="action-card">
+                <h3>📊 Enhanced Report</h3>
+                <p>View the comprehensive submittal register with new priority management and assignee filtering capabilities.</p>
+                <a href="Output/Submittal_Register_Report_Beta.html" class="action-btn">Open Beta Report</a>
+            </div>
+            
+            <div class="action-card">
+                <h3>📤 Upload PDF Files</h3>
+                <p>Upload and organize your submittal documents with the enhanced naming system.</p>
+                <a href="upload.html" class="action-btn">Upload PDFs</a>
+            </div>
+            
+            <div class="action-card">
+                <h3>📁 Browse PDF Files</h3>
+                <p>Access and view all uploaded PDF documents organized by status.</p>
+                <a href="PDFs/" class="action-btn">Browse Files</a>
+            </div>
+            
+            <div class="action-card">
+                <h3>⚙️ Generate Report</h3>
+                <p>Run the enhanced PowerShell script to generate the latest report with priority and assignee data.</p>
+                <a href="Scripts/analyze_submittal_register_beta.ps1" class="action-btn" download>Download Script</a>
+            </div>
+        </div>
+        
+        <div class="new-features">
+            <h2>🚀 New Beta Features</h2>
+            <ul>
+                <li><strong>High Priority Management:</strong> Mark submittals as high priority (Y/N) in Excel</li>
+                <li><strong>Assignee Filtering:</strong> Filter submittals by assigned team member</li>
+                <li><strong>Enhanced Visual Indicators:</strong> Priority badges and color coding</li>
+                <li><strong>Advanced Filtering:</strong> Multiple filter combinations (Priority + Assignee + Worksheet + Status)</li>
+                <li><strong>Improved Statistics:</strong> Priority-based analytics and assignee distribution</li>
+                <li><strong>Better Organization:</strong> Visual priority indicators and enhanced card layouts</li>
+            </ul>
+        </div>
+        
+        <div class="features">
+            <h2>🔧 How to Use the Beta Version</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📝</div>
+                    <div class="feature-text">
+                        <h4>Update Excel File</h4>
+                        <p>Add "High Priority(Y/N)" column (Column A) and "Assignee" column to your Excel file</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-text">
+                        <h4>Run PowerShell Script</h4>
+                        <p>Execute the beta script to generate the enhanced HTML report</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-text">
+                        <h4>Set Priorities</h4>
+                        <p>Mark high priority submittals with "Y" in the Excel file</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">👥</div>
+                    <div class="feature-text">
+                        <h4>Assign Team Members</h4>
+                        <p>Add assignee names to track responsibility</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-text">
+                        <h4>Use Filters</h4>
+                        <p>Filter by priority, assignee, worksheet, and status</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-text">
+                        <h4>View Analytics</h4>
+                        <p>Monitor priority distribution and assignee workload</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>📋 Excel File Structure (Beta)</h2>
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-top: 1rem;">
+                <h4>Required Columns (in order):</h4>
+                <ol style="margin: 1rem 0; padding-left: 2rem;">
+                    <li><strong>High Priority(Y/N)</strong> - Enter "Y" for high priority, "N" for normal</li>
+                    <li><strong>Submittal No.</strong> - Submittal number (e.g., 01756-001.0)</li>
+                    <li><strong>Spec Section Number</strong> - Specification section number</li>
+                    <li><strong>Specification Title</strong> - Title of the specification</li>
+                    <li><strong>Submittal Title</strong> - Title of the submittal</li>
+                    <li><strong>Assignee</strong> - Team member responsible (for filtering)</li>
+                    <li><strong>Parag No</strong> - Paragraph number</li>
+                    <li><strong>Description</strong> - Submittal description</li>
+                    <li><strong>Status</strong> - Current status (AN, NCR, Submitted, etc.)</li>
+                    <li><strong>Date Submitted</strong> - Submission date</li>
+                    <li><strong>Response Date</strong> - Response date</li>
+                    <li><strong>NLT Date</strong> - No Later Than date</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Submittal Register Beta • Enhanced Document Management System</p>
+        <p>Built with advanced filtering, priority management, and assignee tracking</p>
+    </div>
+</body>
+</html>
+

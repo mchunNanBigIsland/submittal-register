@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Upload - Submittal Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0f4c75 0%, #1e3c72 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        .upload-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+        
+        .upload-area {
+            border: 3px dashed #1e3c72;
+            border-radius: 10px;
+            padding: 3rem 2rem;
+            text-align: center;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover {
+            border-color: #2a5298;
+            background: #e3f2fd;
+        }
+        
+        .upload-area.dragover {
+            border-color: #4caf50;
+            background: #e8f5e8;
+        }
+        
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #1e3c72;
+        }
+        
+        .upload-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .status-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #1e3c72;
+        }
+        
+        .file-list {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+        
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+        }
+        
+        .file-info {
+            flex: 1;
+        }
+        
+        .file-name {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .file-size {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .file-status {
+            background: #1e3c72;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+        
+        .btn {
+            background: #1e3c72;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: #2a5298;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .btn-success {
+            background: #28a745;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .back-link a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .error {
+            color: #dc3545;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .success {
+            color: #28a745;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📤 PDF Upload</h1>
+        <p>Upload and organize your submittal documents</p>
+    </div>
+    
+    <div class="container">
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📁</div>
+                <div class="upload-text">Drag and drop PDF files here or click to browse</div>
+                <input type="file" id="fileInput" class="file-input" multiple accept=".pdf">
+            </div>
+        </div>
+        
+        <!-- Status Selection -->
+        <div class="status-section" id="statusSection" style="display: none;">
+            <h3 style="margin-bottom: 1.5rem; color: #333;">Select Status for All Files</h3>
+            <div class="form-group">
+                <label for="statusSelect">Document Status:</label>
+                <select id="statusSelect">
+                    <option value="">Select a status...</option>
+                    <option value="AC">AC - Approved/Compliant</option>
+                    <option value="AN">AN - Approved/Noted</option>
+                    <option value="AS">AS - Approved/Substituted</option>
+                    <option value="L">L - Listed</option>
+                    <option value="NCR">NCR - Non-Compliant/Rejected</option>
+                    <option value="NR">NR - Not Reviewed</option>
+                    <option value="RA">RA - Revise and Resubmit</option>
+                    <option value="RC">RC - Revise and Correct</option>
+                    <option value="REV">REV - Revision</option>
+                    <option value="Submitted">Submitted - Initial submission</option>
+                    <option value="in progress">In Progress</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- File List -->
+        <div class="file-list" id="fileList" style="display: none;">
+            <h3 style="margin-bottom: 1.5rem; color: #333;">Files to Process</h3>
+            <div id="fileItems"></div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="action-buttons" id="actionButtons" style="display: none;">
+            <button class="btn btn-secondary" id="clearBtn">Clear All</button>
+            <button class="btn btn-success" id="processBtn">Process & Download</button>
+        </div>
+        
+        <!-- Back to Main -->
+        <div class="back-link">
+            <a href="index.html">← Back to Main Menu</a>
+        </div>
+    </div>
+
+    <script>
+        class PDFUploader {
+            constructor() {
+                this.files = [];
+                this.status = '';
+                this.initializeElements();
+                this.attachEventListeners();
+            }
+            
+            initializeElements() {
+                this.uploadArea = document.getElementById('uploadArea');
+                this.fileInput = document.getElementById('fileInput');
+                this.statusSection = document.getElementById('statusSection');
+                this.statusSelect = document.getElementById('statusSelect');
+                this.fileList = document.getElementById('fileList');
+                this.fileItems = document.getElementById('fileItems');
+                this.actionButtons = document.getElementById('actionButtons');
+                this.clearBtn = document.getElementById('clearBtn');
+                this.processBtn = document.getElementById('processBtn');
+            }
+            
+            attachEventListeners() {
+                // Upload area events
+                this.uploadArea.addEventListener('click', () => this.fileInput.click());
+                this.uploadArea.addEventListener('dragover', (e) => this.handleDragOver(e));
+                this.uploadArea.addEventListener('dragleave', (e) => this.handleDragLeave(e));
+                this.uploadArea.addEventListener('drop', (e) => this.handleDrop(e));
+                
+                // File input change
+                this.fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
+                
+                // Status selection
+                this.statusSelect.addEventListener('change', (e) => this.handleStatusChange(e));
+                
+                // Action buttons
+                this.clearBtn.addEventListener('click', () => this.clearAll());
+                this.processBtn.addEventListener('click', () => this.processFiles());
+            }
+            
+            handleDragOver(e) {
+                e.preventDefault();
+                this.uploadArea.classList.add('dragover');
+            }
+            
+            handleDragLeave(e) {
+                e.preventDefault();
+                this.uploadArea.classList.remove('dragover');
+            }
+            
+            handleDrop(e) {
+                e.preventDefault();
+                this.uploadArea.classList.remove('dragover');
+                const files = Array.from(e.dataTransfer.files).filter(file => file.type === 'application/pdf');
+                this.addFiles(files);
+            }
+            
+            handleFileSelect(e) {
+                const files = Array.from(e.target.files).filter(file => file.type === 'application/pdf');
+                this.addFiles(files);
+            }
+            
+            addFiles(newFiles) {
+                this.files = [...this.files, ...newFiles];
+                this.updateUI();
+            }
+            
+            handleStatusChange(e) {
+                this.status = e.target.value;
+                this.updateFileDisplay();
+            }
+            
+            updateUI() {
+                if (this.files.length > 0) {
+                    this.statusSection.style.display = 'block';
+                    this.fileList.style.display = 'block';
+                    this.actionButtons.style.display = 'flex';
+                    this.updateFileDisplay();
+                }
+            }
+            
+            updateFileDisplay() {
+                this.fileItems.innerHTML = '';
+                
+                this.files.forEach((file, index) => {
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'file-item';
+                    
+                    const submittalNumber = this.extractSubmittalNumber(file.name);
+                    const newFileName = this.generateNewFileName(file.name, submittalNumber);
+                    
+                    fileItem.innerHTML = `
+                        <div class="file-info">
+                            <div class="file-name">${file.name}</div>
+                            <div class="file-size">${this.formatFileSize(file.size)}</div>
+                            <div style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">
+                                → ${newFileName}
+                            </div>
+                        </div>
+                        <div class="file-status">${this.status || 'No status'}</div>
+                    `;
+                    
+                    this.fileItems.appendChild(fileItem);
+                });
+            }
+            
+            extractSubmittalNumber(filename) {
+                // Extract submittal number from filename
+                // Pattern: numbers-numbers.numbers (e.g., 01756-002.0)
+                const match = filename.match(/(\d{5}-\d{3}\.\d)/);
+                return match ? match[1] : filename.replace(/\.[^/.]+$/, ''); // fallback to filename without extension
+            }
+            
+            generateNewFileName(originalName, submittalNumber) {
+                const extension = '.pdf';
+                return `${submittalNumber}${extension}`;
+            }
+            
+            formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+            
+            clearAll() {
+                this.files = [];
+                this.status = '';
+                this.statusSelect.value = '';
+                this.statusSection.style.display = 'none';
+                this.fileList.style.display = 'none';
+                this.actionButtons.style.display = 'none';
+                this.fileInput.value = '';
+            }
+            
+            async processFiles() {
+                if (!this.status) {
+                    alert('Please select a status for the files.');
+                    return;
+                }
+                
+                this.processBtn.disabled = true;
+                this.processBtn.textContent = 'Processing...';
+                
+                try {
+                    for (let i = 0; i < this.files.length; i++) {
+                        const file = this.files[i];
+                        const submittalNumber = this.extractSubmittalNumber(file.name);
+                        const newFileName = this.generateNewFileName(file.name, submittalNumber);
+                        
+                        // Create download link
+                        const url = URL.createObjectURL(file);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = newFileName;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                        
+                        // Small delay between downloads
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                    }
+                    
+                    alert(`Successfully processed ${this.files.length} file(s). Files have been downloaded with the correct naming convention.`);
+                    this.clearAll();
+                    
+                } catch (error) {
+                    alert('Error processing files: ' + error.message);
+                } finally {
+                    this.processBtn.disabled = false;
+                    this.processBtn.textContent = 'Process & Download';
+                }
+            }
+        }
+        
+        // Initialize the uploader when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new PDFUploader();
+        });
+    </script>
+</body>
+</html>
