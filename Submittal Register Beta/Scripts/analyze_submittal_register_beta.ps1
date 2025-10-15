@@ -41,7 +41,7 @@ function Get-PriorityInfo {
             Class = "high-priority"
             Badge = "HIGH PRIORITY"
             Color = "#ff4444"
-            Icon = "🔴"
+            Icon = "RED"
         }
     } elseif ($priorityValue -eq "N" -or $priorityValue -eq "No" -or $priorityValue -eq "NO") {
         return @{
@@ -113,7 +113,7 @@ function Get-ResponseInfo {
         $urgencyLevel = "overdue"
         $urgencyClass = "overdue"
         $responseStatus = "LATE"
-    } elseif ($daysOverdue >= -3) {
+    } elseif ($daysOverdue -ge -3) {
         $urgencyLevel = "approaching"
         $urgencyClass = "approaching"
         $responseStatus = "Due Soon"
@@ -149,7 +149,7 @@ function Get-UniqueAssignees {
 
 try {
     # Load Excel file
-    $excelFile = "Official_Submittal_Register_Updated.xlsx"
+    $excelFile = "..\Official_Submittal_Register_Updated.xlsx"
     Write-Host "Processing Excel file: $excelFile" -ForegroundColor Yellow
     
     # Create Excel application
@@ -798,9 +798,9 @@ try {
 Write-Host ""
 Write-Host "Submittal Register Beta analysis completed!" -ForegroundColor Green
 Write-Host "Enhanced features:" -ForegroundColor Cyan
-Write-Host "  ✓ High Priority (Y/N) column support" -ForegroundColor White
-Write-Host "  ✓ Assignee filtering with dropdown" -ForegroundColor White
-Write-Host "  ✓ Worksheet filtering" -ForegroundColor White
-Write-Host "  ✓ Priority-based visual indicators" -ForegroundColor White
-Write-Host "  ✓ Enhanced statistics and dashboard" -ForegroundColor White
+Write-Host "  - High Priority (Y/N) column support" -ForegroundColor White
+Write-Host "  - Assignee filtering with dropdown" -ForegroundColor White
+Write-Host "  - Worksheet filtering" -ForegroundColor White
+Write-Host "  - Priority-based visual indicators" -ForegroundColor White
+Write-Host "  - Enhanced statistics and dashboard" -ForegroundColor White
 
